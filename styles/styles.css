@@ -293,17 +293,18 @@ section {
 }
 
 .prog-title {
-  border: 1px solid #27ae60;
+  border: 1px solid var(--color-secondary);
   padding: 10px;
   text-transform: capitalize;
   text-align: center;
   border-radius: 20px;
   width: 50%;
   margin: auto;
+  transition: 0.3s;
 }
 
 .prog-title:hover {
-  background-color: #27ae60;
+  background-color: var(--color-secondary);
 }
 
 /*Timeline*/
