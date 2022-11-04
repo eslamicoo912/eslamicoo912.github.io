@@ -245,12 +245,9 @@ footer {
   width: 200px;
   border-radius: 50%;
   margin: 20px 0;
-  transition: 0.3s;
   border: 3px solid white;
 }
-#lead-content img:hover {
-  border-radius: 0;
-}
+
 #lead-content h1,
 #lead-content h2 {
   margin: 0;
