@@ -579,20 +579,20 @@ i {
   cursor: default;
   font-size: 1.2em;
 }
-/*
 #blogs {
   padding: 50px 15px;
   background: #3498db;
   text-align: center;
 }
-*/
+
 #blogs h2 {
   margin: 0 0 15px 0;
   color: #fff;
   font-weight: 500;
 }
+
 #contact {
-  background: #3498db;
+  background: #ffffff;
 }
 #contact .row-cont {
   display: flex;
@@ -605,10 +605,16 @@ i {
   margin: 30px 0;
 }
 #contact i {
-  color: white;
+  color: #748099;
 }
 #contact p {
-  color: white;
+  color: #748099;
+}
+#contact i:hover {
+  color: #3498db;
+}
+#contact p:hover {
+  color: #3498db;
 }
 #contact .social i {
   font-size: 3rem;
