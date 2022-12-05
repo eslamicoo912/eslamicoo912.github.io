@@ -10,6 +10,15 @@
     that don't come from third party libraries. This file gets compiled using
     Gulp and send to the /css folder which is then loaded on the page.
 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   font-family: "Lato", sans-serif;
   font-size: 16px;
@@ -164,6 +173,7 @@ footer {
 }
 .social {
   text-align: right;
+  padding: 0;
 }
 .social ul {
   margin: 5px 0 0 0;
@@ -532,10 +542,16 @@ footer {
   color: #374054;
   margin: 0 0 15px 0;
 }
-.project-info p {
-  color: #74808a;
-  margin: 0 0 15px 0;
+.project ul {
+  list-style: none;
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+.project ul li {
+  color: #5b6369;
   font-size: 0.9em;
+  line-height: 1.8;
 }
 .project .icons {
   display: flex;
@@ -618,7 +634,9 @@ i {
 }
 #contact .social i {
   font-size: 3rem;
-  margin: 0 20px;
+}
+.social li a {
+  padding: 0;
 }
 .optional-section {
   padding: 50px 15px;
@@ -677,6 +695,9 @@ i {
   }
 }
 @media only screen and (max-width: 992px) {
+  * {
+    max-width: 100vw;
+  }
   #lead {
     height: auto;
     min-height: auto;
