@@ -5,16 +5,10 @@ import { GraduationCap } from 'lucide-react';
 const Education: React.FC = () => {
   const education = [
     {
-      degree: "Master's in Computer Science",
-      school: "Stanford University",
-      year: "2018 - 2020",
-      description: "Specialized in Artificial Intelligence and Machine Learning",
-    },
-    {
-      degree: "Bachelor's in Software Engineering",
-      school: "MIT",
-      year: "2014 - 2018",
-      description: "Focus on Full-Stack Development and Software Architecture",
+      degree: "Bachelor of Computer Science and Informatics",
+      school: "Zagazig University",
+      year: "2020 - 2024",
+      description: "Specialized in Software and programming",
     },
   ];
 

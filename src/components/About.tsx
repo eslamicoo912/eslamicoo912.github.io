@@ -1,28 +1,32 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Code2, Palette, Brain, Rocket } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Code2, Palette, Rocket, Hexagon } from "lucide-react";
 
 const About: React.FC = () => {
   const features = [
     {
       icon: <Code2 className="w-8 h-8" />,
-      title: 'Clean Code',
-      description: 'Writing maintainable and scalable code following best practices and design patterns.',
+      title: "Clean Code",
+      description:
+        "Writing maintainable and scalable code following best practices and design patterns.",
     },
     {
       icon: <Palette className="w-8 h-8" />,
-      title: 'UI/UX Design',
-      description: 'Creating intuitive and visually appealing user interfaces with attention to detail.',
+      title: "Ui Design",
+      description:
+        "Creating intuitive and visually appealing user interfaces with attention to detail.",
     },
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: 'Problem Solving',
-      description: 'Analytical thinking and creative solutions to complex technical challenges.',
+      icon: <Hexagon className="w-8 h-8" />,
+      title: "API Development",
+      description:
+        "Building and maintaining RESTful APIs using Node.js and Express.js.",
     },
     {
       icon: <Rocket className="w-8 h-8" />,
-      title: 'Fast Learner',
-      description: 'Quickly adapting to new technologies and methodologies in the ever-evolving tech landscape.',
+      title: "Fast Learner",
+      description:
+        "Quickly adapting to new technologies and methodologies in the ever-evolving tech landscape.",
     },
   ];
 
@@ -40,8 +44,12 @@ const About: React.FC = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            I'm a passionate full-stack developer with 5+ years of experience in building web applications.
-            My journey in tech has been driven by curiosity and a desire to create meaningful solutions.
+            A passionate web developer who worked on different real projects for
+            real clients and companies. Working with both the backend and
+            frontend sides has given me great experiences and different skills.
+            As a software developer, I worked with APIs and developed
+            high-quality code and user-facing features. My goal is to work
+            within an agile team to contribute to the team's growth.
           </p>
         </motion.div>
 
