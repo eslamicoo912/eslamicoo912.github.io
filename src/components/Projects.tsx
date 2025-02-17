@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
         "Implemented tracking for maintenance and finance requests, for facilitating admin and client tasks",
         "Developed a role-based permission system, enhancing admin control.",
       ],
-      liveUrl: "https://example.com",
+      liveUrl: "#",
     },
     {
       title: "Easymerch AI",
@@ -69,7 +69,7 @@ const Projects: React.FC = () => {
         "Removing background from images",
         "Advanced prompt engineering",
       ],
-      liveUrl: "https://example.com",
+      liveUrl: "https://easymerch.ai",
       githubUrl: "",
     },
   ];
