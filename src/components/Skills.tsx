@@ -1,16 +1,26 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Code2,
+  Server,
+  Database,
+  Blocks,
+  Braces,
+  Terminal,
+  Container,
+  ChevronsLeftRight
+} from "lucide-react";
 
 const Skills: React.FC = () => {
   const skills = [
-    { name: 'JavaScript', level: 90 },
-    { name: 'React', level: 85 },
-    { name: 'Node.js', level: 80 },
-    { name: 'TypeScript', level: 75 },
-    { name: 'Python', level: 70 },
-    { name: 'SQL', level: 85 },
-    { name: 'AWS', level: 65 },
-    { name: 'Docker', level: 60 },
+    { name: "JavaScript", icon: Code2, category: "Frontend" },
+    { name: "React", icon: Blocks, category: "Frontend" },
+    { name: "TailwindCss", icon: Terminal, category: "Frontend" },
+    { name: "TypeScript", icon: Braces, category: "Language" },
+    { name: "Node.js", icon: Server, category: "Backend" },
+    { name: "Express.js", icon: ChevronsLeftRight, category: "Backend" },
+    { name: "MongoDB", icon: Database, category: "Database" },
+    { name: "Docker", icon: Container, category: "DevOps" },
   ];
 
   return (
@@ -24,42 +34,40 @@ const Skills: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            Technical Skills
+            Technical Expertise
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Here's an overview of my technical skills and expertise levels.
+            A showcase of the technologies I work with
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex justify-between mb-2">
-                <span className="font-semibold text-gray-900 dark:text-white">
-                  {skill.name}
-                </span>
-                <span className="text-blue-600 dark:text-blue-400">
-                  {skill.level}%
-                </span>
-              </div>
-              <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  transition={{ duration: 1, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-blue-600 dark:bg-blue-400 h-2.5 rounded-full"
-                />
-              </div>
-            </motion.div>
-          ))}
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {skills.map((skill, index) => {
+            const Icon = skill.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+              >
+                <div className="flex flex-col items-center space-y-3">
+                  <div className="p-3 bg-blue-50 dark:bg-gray-600 rounded-lg">
+                    <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    {skill.name}
+                  </h3>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    {skill.category}
+                  </span>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

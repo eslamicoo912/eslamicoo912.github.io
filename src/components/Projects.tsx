@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, CheckCircle2 } from "lucide-react";
 import queenLogo from "../assets/images/3.png";
+import aiLogo from "../assets/images/ai_face.jpeg";
 
 const Projects: React.FC = () => {
   const projects = [
@@ -34,26 +35,6 @@ const Projects: React.FC = () => {
         "A real estate website & panel with advanced search and filtering.",
       image:
         "https://images.unsplash.com/photo-1565402170291-8491f14678db?q=80&w=2017&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      technologies: [ "React",
-        "Tailwind CSS",
-        "Node.js",
-        "MongoDB",
-        "Express.js",
-        "TypeScript",
-        ],
-      features: [
-        "Advanced search and filtering",
-        "Implemented tracking for maintenance and finance requests, for facilitating admin and client tasks",
-        "Developed a role-based permission system, enhancing admin control.",
-      ],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-    },
-    {
-      title: "AI Image Generator",
-      description: "An AI-powered image generation tool using DALL-E API",
-      image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
       technologies: [
         "React",
         "Tailwind CSS",
@@ -63,14 +44,33 @@ const Projects: React.FC = () => {
         "TypeScript",
       ],
       features: [
-        "Custom image generation",
-        "Style transfer capabilities",
-        "Batch processing",
-        "Image variation generation",
+        "Advanced search and filtering",
+        "Implemented tracking for maintenance and finance requests, for facilitating admin and client tasks",
+        "Developed a role-based permission system, enhancing admin control.",
+      ],
+      liveUrl: "https://example.com",
+    },
+    {
+      title: "Easymerch AI",
+      description: "An AI-powered multi-featured app with advanced features.",
+      image: aiLogo,
+      technologies: [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "TypeScript",
+      ],
+      features: [
+        "Dealing with chatgpt models",
+        "Turn concepts into professional visuals",
+        "Turn images into professional prompts",
+        "Removing background from images",
         "Advanced prompt engineering",
       ],
       liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      githubUrl: "",
     },
   ];
 

@@ -4,23 +4,18 @@ import { Briefcase } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const experiences = [
-    {
-      title: 'Senior Full-Stack Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2020 - Present',
-      description: 'Leading development of enterprise-level web applications using React and Node.js. Managing a team of 5 developers.',
-    },
+    
     {
       title: 'Full-Stack Developer',
-      company: 'Digital Innovations',
-      period: '2018 - 2020',
-      description: 'Developed and maintained multiple client projects using various technologies including Vue.js and Django.',
+      company: 'Saudi Ersa Aqar',
+      period: '09/2023 - 12/2023',
+      description: 'Developed and maintained multiple real estate features using various technologies including React.js and Node.js.',
     },
     {
-      title: 'Junior Developer',
-      company: 'StartUp Hub',
-      period: '2016 - 2018',
-      description: 'Worked on frontend development using React and collaborated with the backend team on API integration.',
+      title: 'Developer',
+      company: 'Freelance',
+      period: '2024 - 2025',
+      description: 'Worked on full stack apps with dashboards using React and Node.js to provide a seamless experience for users.',
     },
   ];
 
