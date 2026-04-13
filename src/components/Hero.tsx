@@ -11,7 +11,11 @@ const container = {
 };
 const item = {
   hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 /* ── Social link ───────────────────────────────────────────── */
@@ -42,7 +46,6 @@ const SocialLink: React.FC<{
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-[#08090e]">
-
       {/* ── Background: grid texture ── */}
       <div
         aria-hidden
@@ -55,7 +58,10 @@ const Hero: React.FC = () => {
       />
 
       {/* ── Ambient glows ── */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
         <div className="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-blue-400/8 dark:bg-blue-500/10 blur-[120px]" />
         <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-indigo-400/6 dark:bg-indigo-500/8 blur-[100px]" />
       </div>
@@ -72,7 +78,6 @@ const Hero: React.FC = () => {
       {/* ── Content wrapper ── */}
       <div className="relative z-10 w-full container mx-auto px-5 sm:px-8 lg:px-12 max-w-6xl py-24 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center min-h-screen lg:min-h-0 lg:h-screen max-h-[900px]">
-
           {/* ══ LEFT — copy ══════════════════════════════════════ */}
           <motion.div
             variants={container}
@@ -81,7 +86,10 @@ const Hero: React.FC = () => {
             className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1 lg:pr-16"
           >
             {/* Eyebrow */}
-            <motion.div variants={item} className="flex items-center gap-3 mb-6">
+            <motion.div
+              variants={item}
+              className="flex items-center gap-3 mb-6"
+            >
               <span className="inline-block w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-blue-500 dark:text-blue-400">
                 Available for work
@@ -115,9 +123,12 @@ const Hero: React.FC = () => {
               <div className="text-base sm:text-lg font-semibold text-slate-500 dark:text-slate-400 tracking-wide">
                 <TypeAnimation
                   sequence={[
-                    "Full-Stack Developer", 2200,
-                    "Backend Engineer", 2200,
-                    "MERN Stack Engineer", 2200,
+                    "Full-Stack Developer",
+                    2200,
+                    "Backend Engineer",
+                    2200,
+                    "MERN Stack Engineer",
+                    2200,
                   ]}
                   repeat={Infinity}
                   speed={40}
@@ -136,7 +147,10 @@ const Hero: React.FC = () => {
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={item} className="flex flex-wrap items-center gap-3 mb-10">
+            <motion.div
+              variants={item}
+              className="flex flex-wrap items-center gap-3 mb-10"
+            >
               <a
                 href="#projects"
                 className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl
@@ -170,7 +184,10 @@ const Hero: React.FC = () => {
               <SocialLink href="https://github.com/eslamicoo912" label="GitHub">
                 <Github className="w-4 h-4" />
               </SocialLink>
-              <SocialLink href="https://www.linkedin.com/in/eslamicoo912/" label="LinkedIn">
+              <SocialLink
+                href="https://www.linkedin.com/in/eslamicoo912/"
+                label="LinkedIn"
+              >
                 <Linkedin className="w-4 h-4" />
               </SocialLink>
               <SocialLink href="mailto:eslamicoo3@gmail.com" label="Email">
@@ -187,11 +204,14 @@ const Hero: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            transition={{
+              duration: 0.9,
+              ease: [0.22, 1, 0.36, 1],
+              delay: 0.15,
+            }}
             className="lg:col-span-5 flex items-center justify-center order-1 lg:order-2"
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[340px] lg:h-[340px]">
-
               {/* Outer offset square — decorative frame */}
               <div
                 className="absolute -inset-4 rounded-3xl border border-blue-500/20 dark:border-blue-400/15"
@@ -218,9 +238,11 @@ const Hero: React.FC = () => {
               ))}
 
               {/* Photo */}
-              <div className="relative w-full h-full rounded-2xl overflow-hidden
+              <div
+                className="relative w-full h-full rounded-2xl overflow-hidden
                               ring-1 ring-slate-200 dark:ring-white/[0.08]
-                              shadow-2xl shadow-slate-300/50 dark:shadow-black/60">
+                              shadow-2xl shadow-slate-300/50 dark:shadow-black/60"
+              >
                 <img
                   src={profile_pic}
                   alt="Eslam Ashraf"
@@ -243,8 +265,12 @@ const Hero: React.FC = () => {
               >
                 <span className="text-2xl leading-none">💻</span>
                 <div>
-                  <p className="text-[11px] text-slate-400 dark:text-slate-500 leading-none mb-0.5">Experience</p>
-                  <p className="text-xs font-bold text-slate-900 dark:text-white leading-none">1+ yr MERN</p>
+                  <p className="text-[11px] text-slate-400 dark:text-slate-500 leading-none mb-0.5">
+                    Experience
+                  </p>
+                  <p className="text-xs font-bold text-slate-900 dark:text-white leading-none">
+                    2+ yr MERN
+                  </p>
                 </div>
               </motion.div>
 
@@ -259,14 +285,15 @@ const Hero: React.FC = () => {
                            shadow-lg shadow-blue-600/40"
               >
                 <span className="text-base leading-none">⚡</span>
-                <span className="text-xs font-bold tracking-wide">Full-Stack</span>
+                <span className="text-xs font-bold tracking-wide">
+                  Full-Stack
+                </span>
               </motion.div>
 
               {/* Glow behind photo */}
               <div className="absolute inset-0 rounded-2xl bg-blue-500/10 blur-3xl -z-10 scale-110" />
             </div>
           </motion.div>
-
         </div>
 
         {/* ── Scroll indicator ── */}
