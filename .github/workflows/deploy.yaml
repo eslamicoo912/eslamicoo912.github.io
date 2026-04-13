@@ -8,7 +8,5 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: Build
-              run: npm run build
             - name: Deploy
               run: npx gh-pages -d dist
