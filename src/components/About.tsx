@@ -1,80 +1,184 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, Palette, Rocket, Hexagon } from "lucide-react";
+import { Code2, MonitorDot, Rocket, SquareCode } from "lucide-react";
 
+
+/* ── Stagger helpers ───────────────────────────────────────── */
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
+
+/* ── Feature card ──────────────────────────────────────────── */
+interface Feature {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  accent: string;       // tailwind text colour
+  accentBg: string;     // tailwind bg colour
+  accentBorder: string; // tailwind border colour
+  num: string;
+}
+
+const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({ feature }) => (
+  <motion.div
+    variants={item}
+    className="group relative flex flex-col gap-4 p-6 rounded-2xl
+               bg-white dark:bg-white/[0.03]
+               border border-slate-200/80 dark:border-white/[0.07]
+               hover:border-blue-400/40 dark:hover:border-blue-400/25
+               shadow-sm hover:shadow-lg hover:shadow-slate-200/50 dark:hover:shadow-black/30
+               transition-all duration-500 overflow-hidden"
+  >
+    {/* Ghost number */}
+    <span
+      aria-hidden
+      className="absolute -bottom-3 -right-1 text-[80px] font-black leading-none
+                 select-none pointer-events-none tracking-tighter
+                 text-slate-900/[0.03] dark:text-white/[0.04]"
+    >
+      {feature.num}
+    </span>
+
+    {/* Icon */}
+    <div
+      className={`inline-flex w-11 h-11 rounded-xl items-center justify-center
+                  ${feature.accentBg} border ${feature.accentBorder}
+                  transition-transform duration-300 group-hover:-translate-y-0.5`}
+    >
+      <span className={feature.accent}>{feature.icon}</span>
+    </div>
+
+    {/* Text */}
+    <div>
+      <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">
+        {feature.title}
+      </h3>
+      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+        {feature.description}
+      </p>
+    </div>
+  </motion.div>
+);
+
+/* ── Section ───────────────────────────────────────────────── */
 const About: React.FC = () => {
-  const features = [
+  const features: Feature[] = [
     {
-      icon: <Code2 className="w-8 h-8" />,
+      icon: <Code2 className="w-5 h-5" />,
       title: "Clean Code",
       description:
         "Writing maintainable and scalable code following best practices and design patterns.",
+      accent: "text-blue-500 dark:text-blue-400",
+      accentBg: "bg-blue-500/10",
+      accentBorder: "border-blue-500/20",
+      num: "01",
     },
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: "Ui Design",
-      description:
-        "Creating intuitive and visually appealing user interfaces with attention to detail.",
-    },
-    {
-      icon: <Hexagon className="w-8 h-8" />,
+      icon: <SquareCode className="w-5 h-5" />,
       title: "API Development",
       description:
-        "Building and maintaining RESTful APIs using Node.js and Express.js.",
+        "Building and maintaining RESTful APIs using Node.js and Express.js with scalable architecture.",
+      accent: "text-violet-500 dark:text-violet-400",
+      accentBg: "bg-violet-500/10",
+      accentBorder: "border-violet-500/20",
+      num: "02",
     },
     {
-      icon: <Rocket className="w-8 h-8" />,
-      title: "Fast Learner",
+      icon: <MonitorDot className="w-5 h-5" />,
+      title: "System Design",
       description:
-        "Quickly adapting to new technologies and methodologies in the ever-evolving tech landscape.",
+        "Designing scalable and reliable systems using best practices and design patterns such as SOLID principles and design patterns.",
+      accent: "text-cyan-500 dark:text-cyan-400",
+      accentBg: "bg-cyan-500/10",
+      accentBorder: "border-cyan-500/20",
+      num: "03",
+    },
+    {
+      icon: <Rocket className="w-5 h-5" />,
+      title: "CI/CD & Cloud Basics",
+      description:
+        "Understanding of CI/CD pipelines and DevOps basics such as Docker, AWS, and GitHub Actions.",
+      accent: "text-amber-500 dark:text-amber-400",
+      accentBg: "bg-amber-500/10",
+      accentBorder: "border-amber-500/20",
+      num: "04",
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="about" className="relative py-20 sm:py-28 bg-slate-50 dark:bg-[#0d0f17] overflow-hidden">
+
+      {/* ── Grid texture ── */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.025] dark:opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#94a3b8 1px,transparent 1px),linear-gradient(to right,#94a3b8 1px,transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      {/* ── Ambient glow ── */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[400px] h-[300px] rounded-full bg-blue-400/6 dark:bg-blue-500/8 blur-[100px]" />
+      </div>
+
+      <div className="relative z-10 container mx-auto px-5 sm:px-8 lg:px-12 max-w-6xl">
+
+        {/* ── Header ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            About Me
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A passionate web developer who worked on different real projects for
-            real clients and companies. Working with both the backend and
-            frontend sides has given me great experiences and different skills.
-            As a software developer, I worked with APIs and developed
-            high-quality code and user-facing features. My goal is to work
-            within an agile team to contribute to the team's growth.
-          </p>
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-blue-500/60" />
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-blue-500 dark:text-blue-400">
+              Background
+            </span>
+          </div>
+
+          {/* Two-column: title + bio */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            <div className="lg:col-span-4">
+              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.05]">
+                About
+                <span className="text-blue-500"> Me</span>
+              </h2>
+            </div>
+
+            <div className="lg:col-span-8">
+              <p className="text-slate-500 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
+                Software Engineer with experience building full-stack web applications, with a strong focus on backend development using Node.js. Skilled in designing scalable APIs, implementing authentication systems, and delivering reliable, user-focused features.<br /><br />
+                I apply clean code practices, SOLID principles, and design patterns to build maintainable systems. Currently building FreelaXer, a SaaS product for freelancers, focusing on backend architecture and real-world system design.<br /><br />
+                Familiar with DevOps fundamentals, including AWS basics, Docker, and CI/CD workflows using GitHub Actions.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* ── Feature cards ── */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+        >
           {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center"
-            >
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-blue-100 dark:bg-blue-900 rounded-full text-blue-600 dark:text-blue-400">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                {feature.description}
-              </p>
-            </motion.div>
+            <FeatureCard key={index} feature={feature} index={index} />
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
